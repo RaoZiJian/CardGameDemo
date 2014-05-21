@@ -133,11 +133,11 @@ bool LoadingMode::init(){
     
     if(Layer::init()){
         
-        auto loadingBg = Sprite::create("IMG_Loading/loading_bg.png");
+        auto loadingBg = Sprite::create("textures/IMG_Loading/loading_bg.png");
         loadingBg->setPosition(Point(VisibleRect::center()));
         addChild(loadingBg);
         
-        auto loading = Sprite::create("IMG_Loading/loading.png");
+        auto loading = Sprite::create("textures/IMG_Loading/loading.png");
         loading->setPosition(VisibleRect::center());
         addChild(loading);
         

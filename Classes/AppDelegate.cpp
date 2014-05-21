@@ -1,4 +1,5 @@
 #include "AppDelegate.h"
+#include "Login.h"
 
 USING_NS_CC;
 
@@ -21,15 +22,21 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // turn on display FPS
     director->setDisplayStats(true);
+    auto designSize = glview->getDesignResolutionSize();
+    glview->setDesignResolutionSize(designSize.width, designSize.height, ResolutionPolicy::EXACT_FIT);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-//    auto scene = HelloWorld::createScene();
-//
-//    // run
-//    director->runWithScene(scene);
+    auto scene = Scene::create();
+    scene->addChild(LoginScene::create());
+    
+    auto sprite = Sprite::create();
+    scene->addChild(sprite);
+
+    // run
+    director->runWithScene(scene);
 
     return true;
 }

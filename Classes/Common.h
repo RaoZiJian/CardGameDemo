@@ -40,17 +40,11 @@ public:
     static Point topLeft();
 };
 
-//class ModeLayer : public Layer{
-//    
-//
-//};
-
 class LoadingMode : public Layer{
     
 public:
     bool init();
     CREATE_FUNC(LoadingMode);
-    
 };
 
 #endif
