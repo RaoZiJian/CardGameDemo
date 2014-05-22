@@ -32,7 +32,7 @@ bool CharacterScene::init(){
     _charName->setPosition(VisibleRect::center()+Point(0,0));
     _charName->setPlaceHolder("Char Name");
     layer->addChild(_charName);
-
+    
     addChild(layer);
     
     return true;
@@ -43,11 +43,11 @@ bool LoginScene::init(){
     if (Scene::init()) {
         
         _winSize = Director::getInstance()->getWinSize();
-        
+      
         auto background = Sprite::create("textures/IMG_Background/login_background.png");
         background->setPosition(VisibleRect::center());
         addChild(background);
-        
+       
         loginLayer = Layer::create();
         loginLayer->setPosition(Point(0,0));
         addChild(loginLayer);

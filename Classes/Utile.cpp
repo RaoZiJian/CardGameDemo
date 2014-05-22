@@ -22,3 +22,11 @@ string Utile::string_replace(string & strBig, const string & strsrc, const strin
     
     return strBig;
 }
+
+string Utile::convertIntToString (int aNum){
+    
+    ostringstream oss;
+    oss<<aNum;
+    
+    return oss.str();
+}

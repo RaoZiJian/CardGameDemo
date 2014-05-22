@@ -54,6 +54,12 @@
 		50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629517ECD46A001EB2F8 /* Icon-100.png */; };
 		50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A017ECD613001EB2F8 /* Icon-29.png */; };
 		50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A117ECD613001EB2F8 /* Icon-50.png */; };
+		66B8CF53192C9FE600D38644 /* CardGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66B8CF51192C9FE600D38644 /* CardGroup.cpp */; };
+		66B8CF54192C9FE600D38644 /* CardGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66B8CF51192C9FE600D38644 /* CardGroup.cpp */; };
+		66B8CF57192CAECA00D38644 /* ReadString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66B8CF55192CAECA00D38644 /* ReadString.cpp */; };
+		66B8CF58192CAECA00D38644 /* ReadString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66B8CF55192CAECA00D38644 /* ReadString.cpp */; };
+		66B8CF5B192CB28000D38644 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66B8CF59192CB28000D38644 /* Card.cpp */; };
+		66B8CF5C192CB28000D38644 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66B8CF59192CB28000D38644 /* Card.cpp */; };
 		66D41327192496B200241706 /* Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66D41326192496B200241706 /* Login.cpp */; };
 		66D41328192496B200241706 /* Login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66D41326192496B200241706 /* Login.cpp */; };
 		66D4133419249AA700241706 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66D4133319249AA700241706 /* Common.cpp */; };
@@ -261,6 +267,12 @@
 		50EF629517ECD46A001EB2F8 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
 		50EF62A017ECD613001EB2F8 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
 		50EF62A117ECD613001EB2F8 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
+		66B8CF51192C9FE600D38644 /* CardGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CardGroup.cpp; path = ../Classes/CardGroup.cpp; sourceTree = "<group>"; };
+		66B8CF52192C9FE600D38644 /* CardGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardGroup.h; path = ../Classes/CardGroup.h; sourceTree = "<group>"; };
+		66B8CF55192CAECA00D38644 /* ReadString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ReadString.cpp; path = ../Classes/ReadString.cpp; sourceTree = "<group>"; };
+		66B8CF56192CAECA00D38644 /* ReadString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadString.h; path = ../Classes/ReadString.h; sourceTree = "<group>"; };
+		66B8CF59192CB28000D38644 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Card.cpp; path = ../Classes/Card.cpp; sourceTree = "<group>"; };
+		66B8CF5A192CB28000D38644 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = ../Classes/Card.h; sourceTree = "<group>"; };
 		66D41325192496A900241706 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		66D41326192496B200241706 /* Login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Login.cpp; sourceTree = "<group>"; };
 		66D4132C19249A8600241706 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -361,6 +373,12 @@
 				66D413631929FA2400241706 /* Utile.h */,
 				66D4136C192B3DEF00241706 /* GameScene.cpp */,
 				66D4136D192B3DEF00241706 /* GameScene.h */,
+				66B8CF51192C9FE600D38644 /* CardGroup.cpp */,
+				66B8CF52192C9FE600D38644 /* CardGroup.h */,
+				66B8CF55192CAECA00D38644 /* ReadString.cpp */,
+				66B8CF56192CAECA00D38644 /* ReadString.h */,
+				66B8CF59192CB28000D38644 /* Card.cpp */,
+				66B8CF5A192CB28000D38644 /* Card.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -396,11 +414,11 @@
 			isa = PBXGroup;
 			children = (
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
-				15AA9C4015B7EC450033D6C2 /* Classes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				080E96DDFE201D6D7F000001 /* ios */,
 				503AE10617EB990700D1A890 /* mac */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				15AA9C4015B7EC450033D6C2 /* Classes */,
 				78C7DDAA14EBA5050085D0C2 /* Resources */,
 			);
 			name = CustomTemplate;
@@ -688,12 +706,15 @@
 				66D4133E1925E4E200241706 /* GameManager.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				66D413641929FA2400241706 /* Utile.cpp in Sources */,
+				66B8CF5B192CB28000D38644 /* Card.cpp in Sources */,
+				66B8CF57192CAECA00D38644 /* ReadString.cpp in Sources */,
 				66D4136E192B3DEF00241706 /* GameScene.cpp in Sources */,
 				66D41327192496B200241706 /* Login.cpp in Sources */,
 				66D4133419249AA700241706 /* Common.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				66B8CF53192C9FE600D38644 /* CardGroup.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,9 +726,12 @@
 				66D4133F1925E4E200241706 /* GameManager.cpp in Sources */,
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				66B8CF58192CAECA00D38644 /* ReadString.cpp in Sources */,
 				66D413651929FA2400241706 /* Utile.cpp in Sources */,
+				66B8CF54192C9FE600D38644 /* CardGroup.cpp in Sources */,
 				66D41328192496B200241706 /* Login.cpp in Sources */,
 				66D4136F192B3DEF00241706 /* GameScene.cpp in Sources */,
+				66B8CF5C192CB28000D38644 /* Card.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
