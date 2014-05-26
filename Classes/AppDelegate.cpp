@@ -16,14 +16,13 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLView::create("My Game");
+        glview = GLView::create("CardGame");
         director->setOpenGLView(glview);
     }
 
     // turn on display FPS
     director->setDisplayStats(true);
-    auto designSize = glview->getDesignResolutionSize();
-    glview->setDesignResolutionSize(designSize.width, designSize.height, ResolutionPolicy::EXACT_FIT);
+    glview->setDesignResolutionSize(1024, 768, ResolutionPolicy::FIXED_HEIGHT);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);

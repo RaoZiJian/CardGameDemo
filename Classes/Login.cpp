@@ -9,6 +9,8 @@
 #include "Login.h"
 #include "GameManager.h"
 #include "GameScene.h"
+#include "ReadString.h"
+#include "Card.h"
 
 bool CharacterScene::init(){
     
@@ -47,7 +49,7 @@ bool LoginScene::init(){
         auto background = Sprite::create("textures/IMG_Background/login_background.png");
         background->setPosition(VisibleRect::center());
         addChild(background);
-       
+               
         loginLayer = Layer::create();
         loginLayer->setPosition(Point(0,0));
         addChild(loginLayer);
@@ -68,6 +70,8 @@ bool LoginScene::init(){
         
         _loginName->setPosition(VisibleRect::center()+Point(0,170));
         _loginPwd->setPosition(VisibleRect::center()+Point(0,30));
+        _loginName->setText("Cocos2d-x");
+        _loginPwd->setText("Cocos2d-x");
         
         auto itemImgLogin = MenuItemImage::create("textures/IMG_Button/btn_login.png", "textures/IMG_Button/btn_login_press.png",CC_CALLBACK_1(LoginScene::callLogin, this));
         auto itemImgLoginRegister = MenuItemImage::create("textures/IMG_Button/btn_register.png", "textures/IMG_Button/btn_register_press.png");

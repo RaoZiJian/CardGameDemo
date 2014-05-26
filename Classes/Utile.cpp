@@ -30,3 +30,21 @@ string Utile::convertIntToString (int aNum){
     
     return oss.str();
 }
+
+ActionInterval* Utile::getAnimate(float dt, SpriteFrame** images, CallFunc* fc,  Node *target){
+      
+    auto am = Animation::create();
+    for(int i=0;i<sizeof(images);i++){
+        
+        auto image = images[i];
+        am->addSpriteFrame(image);
+    }
+    am->setDelayPerUnit(dt);
+    am->setRestoreOriginalFrame(false);
+    
+    if(!fc){
+        return RepeatForever::create(Animate::create(am));
+    }else{
+        return Sequence::create(Animate::create(am),fc ,NULL);
+    }
+}

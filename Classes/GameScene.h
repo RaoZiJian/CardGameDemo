@@ -12,6 +12,7 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "Common.h"
+#include "CardGroup.h"
 
 USING_NS_CC;
 
@@ -20,6 +21,7 @@ class GameScene : public Scene{
 public:
     bool init();
     CREATE_FUNC(GameScene);
+    static void openScene(Ref *sender);
 };
 
 class GameLayer : public Layer{
@@ -28,6 +30,9 @@ public:
     bool init();
     CREATE_FUNC(GameLayer);
     
+private:
+    void instanceSceneCallback(Ref* sender);
+    void CardSceneCallback(Ref* sender);
 };
 
 class CharInfo : public Node{

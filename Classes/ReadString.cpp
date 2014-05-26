@@ -44,6 +44,7 @@ Card* ReadString::read(int key){
     }else if (article.IsObject()&&article.HasMember("cards")){
         
         const rapidjson::Value &a=article["cards"];
+        card->setType("cards");
         if (a.IsArray()){
             
             for(unsigned int i=0;i<a.Size();++i){
@@ -57,7 +58,6 @@ Card* ReadString::read(int key){
                         
                         i_id = val_id.GetInt();
                         if(i_id == key){
-                            card->setID(val["ID"].GetInt());
                             card = setCardData(val);
                         }
                     }
@@ -72,6 +72,14 @@ Card* ReadString::read(int key){
 Card* ReadString::setCardData(const rapidjson::Value &val){
     
     auto card = new Card();
+ 
+    if(val.HasMember("ID")){
+        
+        if(val["ID"].IsInt()){
+            
+            card->setID(val["ID"].GetInt());
+        }
+    }
     
     if(val.HasMember("Name")){
         
@@ -159,7 +167,15 @@ Card* ReadString::setCardData(const rapidjson::Value &val){
             card->setPos(val["Pos"].GetInt());
         }
     }
-    
+
+    if(val.HasMember("Skill")){
+        
+        if(val["Skill"].IsInt()){
+            
+            card->setSkill(val["Skill"].GetInt());
+        }
+    }
+
     return card;
 }
 
