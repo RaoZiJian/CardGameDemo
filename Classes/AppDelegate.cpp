@@ -12,6 +12,7 @@ AppDelegate::~AppDelegate()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
+    
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
@@ -23,6 +24,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // turn on display FPS
     director->setDisplayStats(true);
     glview->setDesignResolutionSize(1024, 768, ResolutionPolicy::FIXED_HEIGHT);
+    director->setContentScaleFactor(1);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);

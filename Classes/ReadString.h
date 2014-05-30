@@ -21,15 +21,19 @@ USING_NS_CC;
 class ReadString
 {
 public:
-    static ReadString* creat(char * fileName);
-    static ReadString* getInstance();
+    static ReadString* creat(char *fileName);
+    static ReadString* getInstance(char *fileName);
     ~ReadString(void);
-    Card* read(int key);
+    Card* read(int key, std::string type);
+    Combat* readCombat();
+    End* readEnd();
 private:
     ReadString(char * fileName);
     std::string Beffer;
     static ReadString* rs;
-    Card* setCardData(const rapidjson::Value &val);
+    Card* setCardData(const rapidjson::Value &a, int key, Card *card, std::string type);
+    Combat* setCombatData(const rapidjson::Value &a);
+    End* setEndData(const rapidjson::Value &a);
 };
 
 #endif /* defined(__CardGameDemo__ReadString__) */

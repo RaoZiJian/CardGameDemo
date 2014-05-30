@@ -197,6 +197,32 @@ void CardNode::updateDisplay(Point scrollViewOffset, float wd){
         _node->setRotation3D(Vertex3F(0,0,0));
 }
 
+void CardNode::attack(int effect){
+    
+    _animal->attack(effect);
+}
+
+void CardNode::hurt(int damage, bool effect){
+    
+    auto hurt = damage;
+    
+    if(_damage+damage>_card->getHP()){
+        
+        hurt = _card->getHP()-_damage;
+        _damage=_card->getHP();
+    }else{
+        
+        _damage = _damage+damage;
+    }
+    
+    if (_damage == _card->getHP()) {
+        _animal->die();
+    }
+    
+    updateInfo();
+    _animal->hurt(hurt, effect);
+}
+
 bool Animal::init(Node *node){
     
     if(Node::init()){
@@ -236,7 +262,7 @@ void Animal::attack(int effect){
             effectAtk->setPosition(Point(0,0) - VisibleRect::center());
             _layer->getParent()->getParent()->addChild(effectAtk);
             
-            auto etk2 = Sprite::create("texutres/IMG_Attack/attack_effect_1_2.png");
+            auto etk2 = Sprite::create("textures/IMG_Attack/attack_effect_1_2.png");
             etk2->setPosition(VisibleRect::center()+Point(250,700));
 
             auto actionEtk2 = MoveTo::create(0.3, VisibleRect::center()+Point(0,80));
@@ -252,7 +278,7 @@ void Animal::attack(int effect){
             effectAtk2->setPosition(Point(0,0) - VisibleRect::center());
             _layer->getParent()->getParent()->addChild(effectAtk2);
             
-            auto sprite =Sprite::create("texutres/IMG_Attack/attack_effect_2_1.png");
+            auto sprite =Sprite::create("textures/IMG_Attack/attack_effect_2_1.png");
             sprite->setPosition(VisibleRect::center());
             effectAtk2->addChild(sprite);
             
@@ -312,16 +338,65 @@ void Animal::actCallback(Node* sender){
     sender->addChild(etk1r);
 }
 
+void Animal::hurt(int damage, bool effect){
+
+    if(!_animate){
+        
+        _animate = Sprite::create("textures/IMG_Hurt/hurt_1.png");
+        _animate->setPosition(_center+Point(0,0));
+        _layer->addChild(_animate);
+        
+        SpriteFrame* images[] = {SpriteFrame::create("textures/IMG_Hurt/hurt_1.png", Rect(0, 0, 148, 200)),SpriteFrame::create("textures/IMG_Hurt/hurt_2.png", Rect(0, 0, 148, 200)),SpriteFrame::create("textures/IMG_Hurt/hurt_3.png", Rect(0, 0, 148, 200))};
+        
+        if(effect){
+            
+            _animate->runAction(Utile::getAnimate(0.1, images, CallFunc::create(CC_CALLBACK_0(Animal::unAnimate,this)), this));
+        }else{
+            
+            _animate->runAction(Utile::getAnimate(0.1, images,
+                                                  CallFunc::create([&](){
+                _animate->setFlippedX(true);
+                _animate->runAction(Utile::getAnimate(0.1, images, CallFunc::create(CC_CALLBACK_0(Animal::unAnimate,this)), this));}), this));
+        }
+        if (!_damageLabel) {
+            _damageLabel = Label::create();
+            _damageLabel->setString("-"+Utile::convertIntToString(damage));
+            _damageLabel->setSystemFontSize(60);
+            _damageLabel->setColor(Color3B::RED);
+        }
+        
+        _damageLabel->setPosition(_center+Point(0,80));
+        
+        auto fadeIn = FadeIn::create(0.3);
+        auto fadeOut = FadeOut::create(1.5);
+        auto mu = MoveBy::create(1, Point(0,60));
+        auto action = Spawn::create(fadeIn,fadeOut, mu,NULL);
+        
+        _damageLabel->runAction(action);
+    }else{
+        unAnimate();
+        hurt(damage, false);
+    }
+ }
+
 void Animal::unAnimate(){
     if(_animate){
         _animate->removeFromParent();
-        _animate = NULL;
+        _animate=NULL;
     }
 }
 
 void Animal::remove(cocos2d::Node *sender){
     
     removeFromParent();
+}
+
+void Animal::die(){
+    
+    auto t1 = TintTo::create(0.5, 200, 0, 0);
+    auto t2 = TintTo::create(1, 100, 100, 100);
+    auto action = Sequence::create(t1,t2,NULL);
+    _animal->runAction(action);
 }
 
 LayerColor* Animal::getThisLayer(){

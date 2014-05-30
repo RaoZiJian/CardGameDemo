@@ -7,6 +7,7 @@
 //
 
 #include "GameScene.h"
+#include "InstanceScene.h"
 
 bool GameScene::init(){
     
@@ -34,10 +35,10 @@ bool GameLayer::init(){
         background->setPosition(VisibleRect::center());
         addChild(background);
         
-        auto itemImgInstance = MenuItemImage::create("textures/IMG_Button/btn_instance.png", "textures/IMG_Button/btn_instance_press.png",CC_CALLBACK_1(GameLayer::instanceSceneCallback, this));
+        auto itemImgInstance = MenuItemImage::create("textures/IMG_Button/btn_instance.png", "textures/IMG_Button/btn_instance_press.png",CC_CALLBACK_0(InstanceScene::onOepn, this));
         auto itemImgShop = MenuItemImage::create("textures/IMG_Button/btn_shop.png", "textures/IMG_Button/btn_shop_press.png");
         auto itemImgCardUpgrade = MenuItemImage::create("textures/IMG_Button/btn_card_upgrade.png", "textures/IMG_Button/btn_card_upgrade_press.png");
-        auto itemImgCardGroup = MenuItemImage::create("textures/IMG_Button/btn_card_group.png", "textures/IMG_Button/btn_card_group_press.png", CC_CALLBACK_1(GameLayer::CardSceneCallback, this));
+        auto itemImgCardGroup = MenuItemImage::create("textures/IMG_Button/btn_card_group.png", "textures/IMG_Button/btn_card_group_press.png", CC_CALLBACK_0(CardGroupScene::onOpen, this));
         
         itemImgInstance->setPosition(VisibleRect::center() + Point(270,170));
         itemImgShop->setPosition(VisibleRect::center() + Point(180,-150));
@@ -58,17 +59,6 @@ bool GameLayer::init(){
     
     return false;
 }
-
-void GameLayer::instanceSceneCallback(cocos2d::Ref *sender){
-    
-    
-}
-
-void GameLayer::CardSceneCallback(cocos2d::Ref *sender){
-    
-    Director::getInstance()->replaceScene(CardGroupScene::create());
-}
-
 
 bool CharInfo::init(){
     

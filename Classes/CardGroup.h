@@ -21,6 +21,7 @@ class CardGroupScene : public Scene{
 public:
     bool init();
     CREATE_FUNC(CardGroupScene);
+    static void onOpen(Ref *sender);
 };
 
 class CardGroupLayer : public Layer{

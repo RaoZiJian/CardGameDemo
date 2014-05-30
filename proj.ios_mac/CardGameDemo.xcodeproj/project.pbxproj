@@ -52,6 +52,10 @@
 		50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629517ECD46A001EB2F8 /* Icon-100.png */; };
 		50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A017ECD613001EB2F8 /* Icon-29.png */; };
 		50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A117ECD613001EB2F8 /* Icon-50.png */; };
+		6612C80E193466E2007481C5 /* InstanceScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6612C80C193466E2007481C5 /* InstanceScene.cpp */; };
+		6612C80F193466E2007481C5 /* InstanceScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6612C80C193466E2007481C5 /* InstanceScene.cpp */; };
+		6612C81419347B74007481C5 /* FightScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6612C81219347B74007481C5 /* FightScene.cpp */; };
+		6612C81519347B74007481C5 /* FightScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6612C81219347B74007481C5 /* FightScene.cpp */; };
 		665F9086192F40360087F57F /* json in Resources */ = {isa = PBXBuildFile; fileRef = 665F9084192F40360087F57F /* json */; };
 		665F9087192F40360087F57F /* json in Resources */ = {isa = PBXBuildFile; fileRef = 665F9084192F40360087F57F /* json */; };
 		665F9088192F40360087F57F /* textures in Resources */ = {isa = PBXBuildFile; fileRef = 665F9085192F40360087F57F /* textures */; };
@@ -265,6 +269,10 @@
 		50EF629517ECD46A001EB2F8 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
 		50EF62A017ECD613001EB2F8 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
 		50EF62A117ECD613001EB2F8 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
+		6612C80C193466E2007481C5 /* InstanceScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InstanceScene.cpp; path = ../Classes/InstanceScene.cpp; sourceTree = "<group>"; };
+		6612C80D193466E2007481C5 /* InstanceScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstanceScene.h; path = ../Classes/InstanceScene.h; sourceTree = "<group>"; };
+		6612C81219347B74007481C5 /* FightScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FightScene.cpp; path = ../Classes/FightScene.cpp; sourceTree = "<group>"; };
+		6612C81319347B74007481C5 /* FightScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FightScene.h; path = ../Classes/FightScene.h; sourceTree = "<group>"; };
 		665F9084192F40360087F57F /* json */ = {isa = PBXFileReference; lastKnownFileType = folder; path = json; sourceTree = "<group>"; };
 		665F9085192F40360087F57F /* textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = textures; sourceTree = "<group>"; };
 		665F908A192F40A10087F57F /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Card.cpp; path = ../Classes/Card.cpp; sourceTree = "<group>"; };
@@ -369,9 +377,9 @@
 				665F908F192F40A10087F57F /* GameScene.h */,
 				665F9090192F40A10087F57F /* Login.cpp */,
 				665F9091192F40A10087F57F /* ReadString.cpp */,
+				665F9094192F40A10087F57F /* ReadString.h */,
 				665F9092192F40A10087F57F /* Utile.cpp */,
 				665F9093192F40A10087F57F /* Utile.h */,
-				665F9094192F40A10087F57F /* ReadString.h */,
 				665F9095192F40A10087F57F /* AppDelegate.cpp */,
 				665F9096192F40A10087F57F /* AppDelegate.h */,
 				665F9097192F40A10087F57F /* Common.cpp */,
@@ -379,6 +387,10 @@
 				665F9099192F40A10087F57F /* GameManager.cpp */,
 				665F909A192F40A10087F57F /* GameManager.h */,
 				665F909B192F40A10087F57F /* Login.h */,
+				6612C80C193466E2007481C5 /* InstanceScene.cpp */,
+				6612C80D193466E2007481C5 /* InstanceScene.h */,
+				6612C81219347B74007481C5 /* FightScene.cpp */,
+				6612C81319347B74007481C5 /* FightScene.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -704,10 +716,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				6612C80E193466E2007481C5 /* InstanceScene.cpp in Sources */,
 				665F90AC192F40A10087F57F /* GameManager.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				665F90A8192F40A10087F57F /* AppDelegate.cpp in Sources */,
 				665F90A4192F40A10087F57F /* ReadString.cpp in Sources */,
+				6612C81419347B74007481C5 /* FightScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				665F90A6192F40A10087F57F /* Utile.cpp in Sources */,
 				665F909C192F40A10087F57F /* Card.cpp in Sources */,
@@ -726,8 +740,10 @@
 				665F90AD192F40A10087F57F /* GameManager.cpp in Sources */,
 				665F90A3192F40A10087F57F /* Login.cpp in Sources */,
 				665F90AB192F40A10087F57F /* Common.cpp in Sources */,
+				6612C81519347B74007481C5 /* FightScene.cpp in Sources */,
 				665F90A7192F40A10087F57F /* Utile.cpp in Sources */,
 				665F909F192F40A10087F57F /* CardGroup.cpp in Sources */,
+				6612C80F193466E2007481C5 /* InstanceScene.cpp in Sources */,
 				665F90A9192F40A10087F57F /* AppDelegate.cpp in Sources */,
 				665F90A1192F40A10087F57F /* GameScene.cpp in Sources */,
 				665F90A5192F40A10087F57F /* ReadString.cpp in Sources */,

@@ -26,7 +26,6 @@ public:
     CC_SYNTHESIZE(int, defence, Defence);
     CC_SYNTHESIZE(int, speed, Speed);
     CC_SYNTHESIZE(int, talent, Talent);
-    CC_SYNTHESIZE(int, drop, Drop);
     CC_SYNTHESIZE(int, experience, Experience);
     CC_SYNTHESIZE(int, level, Level);
     CC_SYNTHESIZE(int, status, Status);
@@ -34,7 +33,23 @@ public:
     CC_SYNTHESIZE(int, skill, Skill);
     CC_SYNTHESIZE(std::string, damage, Damage);
     CC_SYNTHESIZE(std::string, type, Type);
+    CC_SYNTHESIZE(int, drop, Drop);
+    CC_SYNTHESIZE(std::string, hash, Hash);
+};
+
+class Combat : public Node{
     
+    CC_SYNTHESIZE(std::string, beattacked, Beattacked);
+    CC_SYNTHESIZE(int, skill, Skill);
+    CC_SYNTHESIZE(std::string, attacker, Attacker);
+    CC_SYNTHESIZE(int, damage, Damage);
+};
+
+class End : public Node{
+    
+    CC_SYNTHESIZE(int, experience, Experience);
+    CC_SYNTHESIZE(int, drop, Drop);
+    CC_SYNTHESIZE(int, result, Result);
 };
 
 class CardNode : public Node{
@@ -49,6 +64,8 @@ public:
     void updateDisplay(Point scrollViewOffset, float wd);
     Node* getThisNode();
     Animal* getAnimal();
+    void attack(int effect);
+    void hurt(int damage, bool effect);
     
 private:
     bool _isMonster;
@@ -71,6 +88,8 @@ public:
     bool init(Node *node);
     void attack(int effect);
     LayerColor* getThisLayer();
+    void hurt(int damage, bool effect);
+    void die();
 
 private:
     

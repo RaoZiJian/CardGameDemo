@@ -22,7 +22,7 @@ public:
     
     static string string_replace(string & strBig, const string & strsrc, const string &strdst);
     static string convertIntToString (int aNum);
-    static ActionInterval* getAnimate(float dt, SpriteFrame** images, CallFunc* fc, Node* target);
+    static ActionInterval* getAnimate(float dt, SpriteFrame* images[], CallFunc* fc, Node* target);
 };
 
 #endif /* defined(__CardGameDemo__Utile__) */

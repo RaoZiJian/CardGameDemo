@@ -25,6 +25,11 @@ bool CardGroupScene::init(){
     return false;
 }
 
+void CardGroupScene::onOpen(Ref *sender){
+    
+    Director::getInstance()->replaceScene(CardGroupScene::create());
+}
+
 bool CardGroupLayer::init(){
     
     if(Layer::init()){
@@ -88,11 +93,11 @@ bool GalleryLayer::init(){
         _cardHeight = 290;
         _contentSize = VisibleRect::winSize();
         
-        ReadString* rs = ReadString::getInstance();
+        ReadString* rs = ReadString::getInstance("json/cardGroup.json");
         
         for(int i=1;i<9;i++){
             
-            auto card = rs->read(i);
+            auto card = rs->read(i,"cards");
             auto cardNode = CardNode::createWithInfo(card);
             cardNode->setPosition((_cardWidth+_cardDistance)*(i-1), _contentSize.height/2);
             _colorLayer->addChild(cardNode,0.0f,i);

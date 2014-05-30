@@ -29,10 +29,6 @@ class GameLayer : public Layer{
 public:
     bool init();
     CREATE_FUNC(GameLayer);
-    
-private:
-    void instanceSceneCallback(Ref* sender);
-    void CardSceneCallback(Ref* sender);
 };
 
 class CharInfo : public Node{
