@@ -10,7 +10,6 @@
 
 using namespace std;
 using namespace cocostudio;
-ReadString* ReadString::rs = nullptr;
 
 ReadString::ReadString(char *fileName){
     
@@ -25,11 +24,9 @@ ReadString* ReadString::creat(char *fileName){
     return RS;
 }
 
-ReadString* ReadString::getInstance(char *fileName){
+ReadString* ReadString::getReadString(char *fileName){
     
-    if(rs == nullptr)
-        rs= ReadString::creat(fileName);
-    return rs;
+    return ReadString::creat(fileName);
 }
 
 Card* ReadString::read(int key, std::string type){
@@ -188,11 +185,12 @@ Card* ReadString::setCardData(const rapidjson::Value &a, int key ,Card *card, st
                                 card->setHash(val["Hash"].GetString());
                             }
                         }
-}
+                    }
                 }
             }
         }
     }
+    
     return card;
 }
 

@@ -93,7 +93,7 @@ bool GalleryLayer::init(){
         _cardHeight = 290;
         _contentSize = VisibleRect::winSize();
         
-        ReadString* rs = ReadString::getInstance("json/cardGroup.json");
+        ReadString* rs = ReadString::getReadString("json/cardGroup.json");
         
         for(int i=1;i<9;i++){
             

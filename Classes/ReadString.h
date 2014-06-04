@@ -22,7 +22,7 @@ class ReadString
 {
 public:
     static ReadString* creat(char *fileName);
-    static ReadString* getInstance(char *fileName);
+    static ReadString* getReadString(char *fileName);
     ~ReadString(void);
     Card* read(int key, std::string type);
     Combat* readCombat();
@@ -30,7 +30,6 @@ public:
 private:
     ReadString(char * fileName);
     std::string Beffer;
-    static ReadString* rs;
     Card* setCardData(const rapidjson::Value &a, int key, Card *card, std::string type);
     Combat* setCombatData(const rapidjson::Value &a);
     End* setEndData(const rapidjson::Value &a);

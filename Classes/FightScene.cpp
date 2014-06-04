@@ -37,7 +37,7 @@ bool FightLayer::init(){
         background->setPosition(VisibleRect::center());
         addChild(background);
 
-        ReadString* rs = ReadString::getInstance("json/combat.json");
+        ReadString* rs = ReadString::getReadString("json/combat.json");
         
         for(int i=1;i<3;i++){
             
